@@ -5,31 +5,27 @@ import { Button } from './Button';
 
 const Confirm = ({ children, visible, onAccept, onDecline }) => {
   const { containerStyle, textStyle, cardSectionStyle } = styles;
-
   return (
     <Modal
       visible={visible}
-      transparent
-      animationType="slide"
+      animationType='slide'
       onRequestClose={() => {}}
+      transparent
     >
       <View style={containerStyle}>
         <CardSection style={cardSectionStyle}>
-          <Text style={textStyle}>
-            {children}
-          </Text>
+          <Text style={textStyle}>{children}</Text>
         </CardSection>
-
         <CardSection>
-          <Button onPress={onAccept}>Yes</Button>
-          <Button onPress={onDecline}>No</Button>
+          <Button onPress={onAccept} >Yes</Button>
+          <Button onPress={onDecline} >No</Button>
         </CardSection>
       </View>
     </Modal>
   );
 };
 
-const styles = {
+styles = {
   cardSectionStyle: {
     justifyContent: 'center'
   },
@@ -45,6 +41,6 @@ const styles = {
     flex: 1,
     justifyContent: 'center'
   }
-};
+}
 
 export { Confirm };
